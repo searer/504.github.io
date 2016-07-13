@@ -109,38 +109,38 @@
 		<div class="col-md-6 col-xs-6">
 			<div class="heading">
 				{{#order.clockwise}}
-					<h2>Clockwise player order</h2>
-					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>Common capital in center of map</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
-					{{^mapnum.4}}{{^mapnum.5}}<p>Capitals chosen counter clockwise from last player to first</p>{{/mapnum.5}}{{/mapnum.4}}
+					<h2>시계 방향으로 차례 진행</h2>
+					{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}<p>중앙에 있는 1번도시가 공동수도둠</p>{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}
+					{{^mapnum.4}}{{^mapnum.5}}<p>수도선택은 차례 순서 역순</p>{{/mapnum.5}}{{/mapnum.4}}
 				{{/order.clockwise}}
 				{{#order.income}}
-					<h2>Round-based {{owner}} order</h2>
-					<p>(according to income from high to low)</p>
+					<h2>라운드 갱신형 {{owner}}차례진행</h2>
+					<p>(수입이 많은 사람부터 적은사람 순)</p>
 				{{/order.income}}
 				{{#order.vp}}
-					<h2>Round-based {{owner}} order</h2>
-					<p>(according to victory points from fewest to most)</p>
+					<h2>라운드 갱신형{{owner}}차례진행</h2>
+					<p>(승점이 낮은 사람부터 높은사람 순)</p>
 				{{/order.vp}}
 				{{#order.shares}}
-					<h2>Round-based company order</h2>
-					<p>(according to share values from high to low)</p>
+					<h2>라운드 갱신형 차례 진행</h2>
+					<p>(주가가 높은 회사에서 낮은 회사 순)</p>
 				{{/order.shares}}
 			</div>
 		</div>
 		<div class="col-md-3 col-xs-3">
 			<div class="heading">
 				<h2>Starting Money</h2>
-				{{#money.fixed}}<p>Each player gets ${{money.amount}}</p>{{/money.fixed}}
-				{{#money.increasing}}<p>In turn order $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
-				{{#money.shares}}<p>Each ♟: ($600 / # of players)</p>{{/money.shares}}
-				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
+				{{#money.fixed}}<p>플레이어 마다 ${{money.amount}}</p>{{/money.fixed}}
+				{{#money.increasing}}<p>턴 순서에 따라 $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
+				{{#money.shares}}<p>Each ♟: ($600 / # 플레이어수</p>{{/money.shares}}
+				{{#3.III}}<p>플레이어마다 추가로 $20</p>{{/3.III}}
 			</div>
 		</div>
 	</div>
 </script>
 <script id="template_setup" type="x-tmpl-mustache">
 	<div class="row section">
-		<div class="col-md-2 col-xs-2"><h1>Special game parts</h1></div>
+		<div class="col-md-2 col-xs-2"><h1>특별 게임 구성물</h1></div>
 		<div class="col-md-10 col-xs-10">
 			<ul class="parts">
 				{{#parts}}
