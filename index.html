@@ -129,11 +129,11 @@
 		</div>
 		<div class="col-md-3 col-xs-3">
 			<div class="heading">
-				<h2>Starting Money</h2>
-				{{#money.fixed}}<p>플레이어 마다 ${{money.amount}}</p>{{/money.fixed}}
+			<h2>시작 자금</h2>
+				{{#money.fixed}}<p>플레이어마다 ${{money.amount}}</p>{{/money.fixed}}
 				{{#money.increasing}}<p>턴 순서에 따라 $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
-				{{#money.shares}}<p>Each ♟: ($600 / # 플레이어수</p>{{/money.shares}}
-				{{#3.III}}<p>플레이어마다 추가로 $20</p>{{/3.III}}
+				{{#money.shares}}<p>Each ♟: ($600 / # of players)</p>{{/money.shares}}
+				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
 			</div>
 		</div>
 	</div>
@@ -141,6 +141,7 @@
 <script id="template_setup" type="x-tmpl-mustache">
 	<div class="row section">
 		<div class="col-md-2 col-xs-2"><h1>특별 게임 구성물</h1></div>
+	
 		<div class="col-md-10 col-xs-10">
 			<ul class="parts">
 				{{#parts}}
