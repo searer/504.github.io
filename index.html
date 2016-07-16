@@ -133,7 +133,7 @@
 				{{#money.fixed}}<p>플레이어마다 ${{money.amount}}</p>{{/money.fixed}}
 				{{#money.increasing}}<p>턴 순서에 따라 $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
 				{{#money.shares}}<p>Each ♟: ($600 / # of players)</p>{{/money.shares}}
-				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
+				{{#3.III}}<p>플레이어마다 추가금 $20</p>{{/3.III}}
 			</div>
 		</div>
 	</div>
@@ -160,25 +160,25 @@
 		<div class="col-md-10 col-xs-10">
 			{{#5}}<p>모든 지도 타일을 종류별로 구별해서 따로 쌓습니다. 쌓은 각 타일 더미를 옆으로 한 줄이 되게 배치하고, 도시-물-초원-들판-산-사막 순서로 놓습니다.  {{#1}}{{^1.III}}도시 타일 더미는 가장 작 은 숫자 도시가 맨 위에, 10번 도시가 맨 아래에 있도록 순서대로 쌓습니다.{{/1.III}}{{/1}}</p>{{/5}}
 			<p>
-				Lay out map {{map.value}}.
-				{{#1}}{{^1.III}}Display cities with their goods side atop. {{#8}}The cities remain empty of goods.{{/8}}{{^8}}그 도시에 있는 원형 심볼과 같은 상품 4개를 놓습니다.{{/8}}{{/1.III}}{{/1}}
+				지도 {{map.value}}.
+				{{#1}}{{^1.III}}도시는 심볼이 보이는 면으로 놓습니다. {{#8}}도시를 빈 상태로 둡니다.{{/8}}{{^8}}그 도시에 있는 원형 심볼과 같은 상품 4개를 놓습니다.{{/8}}{{/1.III}}{{/1}}
 				{{#8}}
 					{{^8.III}}
-						Display land and water tiles with the goods side atop.
-						Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).
+						육지와 물 타일은 상품이 보이는 면으로 놓습니다. 
+						사막은 그 자체로 아무런 상품도 생산하지 않기 때문에 상품 심볼이 없습니다.(but see <span class="water-adjacent icon"></span>).
 					{{/8.III}}
 					{{#8.III}}{{#1}}
-						Display land and water tiles with the goods side atop.
-						Deserts do not produce goods themselves (but see <span class="water-adjacent icon"></span>).
+						육지와 물 타일은 상품이 보이는 면으로 놓습니다.
+						사막은 그 자체로 아무런 상품도 생산하지 않기 때문에 상품 심볼이 없습니다.(but see <span class="water-adjacent icon"></span>).
 					{{/1}}{{/8.III}}
 				{{/8}}
 			</p>
 			{{^7}}
 				{{#6.I}}
-					<p>Place the majority board next to the game map with the column for deserts showing and place the 6 marking tokens for each {{owner}} below this board.</p>
+					<p>지도 옆에 우위 판을 사막이 있는 면으로 놓고, 각{{owner}}의 표시 토큰을 우위 판의 아래 에 놓습니다</p>
 				{{/6.I}}
 				{{#6.II}}
-					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
+					<p>지도 옆에 우위 판을 사막이 없는 면으로 놓고,{{^2.III}}없는{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
 				{{/6.II}}
 			{{/7}}
 			{{#7}}
