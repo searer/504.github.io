@@ -1,4 +1,4 @@
-<html manifest="manifest.appcache">
+﻿<html manifest="manifest.appcache">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="initial-scale=1,user-scalable=yes">
@@ -178,7 +178,7 @@
 					<p>지도 옆에 우위 판을 사막이 있는 면으로 놓고, 각{{owner}}의 표시 토큰을 우위 판의 아래 에 놓습니다</p>
 				{{/6.I}}
 				{{#6.II}}
-					<p>지도 옆에 우위 판을 사막이 없는 면으로 놓고,{{^2.III}}없는{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
+					<p>Place the majority board next to the game map with{{^2.III}}out{{/2.III}}{{#2.III}}{{^9.I}}{{^5.I}}out{{/5.I}}{{/9.I}}{{/2.III}} the column for deserts showing and place {{^2.III}}5 of the{{/2.III}}{{#2.III}}{{^9.I}}5 of the{{/9.I}}{{#9.I}}the 6{{/9.I}}{{/2.III}} marking tokens for each {{owner}} below this board.</p>
 				{{/6.II}}
 			{{/7}}
 			{{#7}}
@@ -303,7 +303,7 @@
 <script id="template_privileges" type="x-tmpl-mustache">
 	{{#3}}
 		<div class="row section cards">
-			<div class="col-md-2 col-xs-2 mod3"><h1>Privilege Cards</h1></div>
+			<div class="col-md-2 col-xs-2 mod3"><h1>특권카드</h1></div>
 			<div class="col-md-10 col-xs-10">
 				{{#priv.I.exists}}
 				<h3>Step I</h3>
@@ -1482,40 +1482,40 @@
 	var modules;
 
 	var parts = {
-		'2': {'name': '상품', 'max': 48},
-		'3': {'name': '가림 토큰', 'max': 30},
-		'4': {'name': '도시 카드', 'max': 10},
-		'5': {'name': '가격 토큰', 'max': 1},
-		'6': {'name': '시작플레이어 카드', 'max': 1},
-		'8': {'name': '특권 카드', 'max': 66},
-		'10': {'name': '수송 차량', 'max': 5},
-		'11': {'name': '적재함 카드', 'max': 5},
-		'12': {'name': '이동력 토큰', 'max': 10},
-		'13p': {'id': '13', 'name': '플레이어마다 정착지', 'max': 30},
-		'13s': {'id': '13', 'name': '다섯 번째 주식회사를 위한 정착지', 'max': 15},
-		'14p': {'id': '14', 'name': '플레이어마다 주민', 'max': 30},
-		'14s': {'id': '14', 'name': '다섯 번째 주식회사를 위한 주민', 'max': 15},
-		'15s': {'id': '15', 'name': '주가 판', 'max': 1},
-		'15g': {'id': '15', 'name': '상품 가격 판', 'max': 1},
-		'16': {'name': '승점 토큰', 'max': 100},
-		'17': {'name': '우위 판', 'max': 1},
-		'18': {'name': '표시 토큰', 'max': 30},
-		'19': {'name': '공장', 'max': 30},
-		'20': {'name': '차례 순서 카드', 'max': 3},
-		'21': {'name': '주사위', 'max': 3},
-		'22': {'name': '민병대', 'max': 8},
-		'23': {'name': '막사', 'max': 8},
-		'24': {'name': '탐험가 마커', 'max': 6},
-		'25': {'name': '수입 토큰', 'max': 30},
-		'26': {'name': '도로', 'max': 90},
-		'27': {'name': '시작 카드', 'max': 4},
-		'28': {'name': '점수 카드', 'max': 17},
-		'29': {'name': '생산 설비', 'max': 40},
-		'30': {'name': '주식회사 판', 'max': 5},
-		'31': {'name': '주가 토큰 5개', 'max': 5},
-		'32': {'name': '주식 증권', 'max': 45},
-		'33': {'name': '개요타일', 'max': 1},
-		'36': {'name': '보트', 'max': 1},
+		'2': {'name': 'goods', 'max': 48},
+		'3': {'name': 'covering tokens', 'max': 30},
+		'4': {'name': 'city cards', 'max': 10},
+		'5': {'name': 'price token', 'max': 1},
+		'6': {'name': 'starting player card', 'max': 1},
+		'8': {'name': 'privileges', 'max': 66},
+		'10': {'name': 'transport trolleys', 'max': 5},
+		'11': {'name': 'cargo hold cards', 'max': 5},
+		'12': {'name': 'movement point tokens', 'max': 10},
+		'13p': {'id': '13', 'name': 'settlements per player', 'max': 30},
+		'13s': {'id': '13', 'name': 'settlements per company', 'max': 15},
+		'14p': {'id': '14', 'name': 'residents per player', 'max': 30},
+		'14s': {'id': '14', 'name': 'residents per company', 'max': 15},
+		'15s': {'id': '15', 'name': 'share value board', 'max': 1},
+		'15g': {'id': '15', 'name': 'goods price board', 'max': 1},
+		'16': {'name': 'victory point tokens', 'max': 100},
+		'17': {'name': 'majority board', 'max': 1},
+		'18': {'name': 'marking tokens', 'max': 30},
+		'19': {'name': 'factories', 'max': 30},
+		'20': {'name': 'turn order cards', 'max': 3},
+		'21': {'name': 'dice', 'max': 3},
+		'22': {'name': 'militia', 'max': 8},
+		'23': {'name': 'barracks', 'max': 8},
+		'24': {'name': 'explorer tiles', 'max': 6},
+		'25': {'name': 'income tokens', 'max': 30},
+		'26': {'name': 'roads', 'max': 90},
+		'27': {'name': 'starting cards', 'max': 4},
+		'28': {'name': 'scoring cards', 'max': 17},
+		'29': {'name': 'plants', 'max': 40},
+		'30': {'name': 'stock company boards', 'max': 5},
+		'31': {'name': 'share value tokens', 'max': 5},
+		'32': {'name': 'shares', 'max': 45},
+		'33': {'name': 'overview tile', 'max': 1},
+		'36': {'name': 'boat', 'max': 1},
 	}
 	
 	var shares_defs = {
