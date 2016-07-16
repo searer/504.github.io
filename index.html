@@ -118,11 +118,11 @@
 					<p>(수입이 많은이에서 적은이 순)</p>
 				{{/order.income}}
 				{{#order.vp}}
-					<h2>Round-based {{owner}} order</h2>
+					<h2>라운드 갱신형 {{owner}} 차례진행</h2>
 					<p>(according to victory points from fewest to most)</p>
 				{{/order.vp}}
 				{{#order.shares}}
-					<h2>Round-based company order</h2>
+					<h2>라운드 갱신형 차례 진행</h2>
 					<p>(according to share values from high to low)</p>
 				{{/order.shares}}
 			</div>
@@ -132,8 +132,8 @@
 				<h2>시작 자금</h2>
 				{{#money.fixed}}<p>플레이어마다 ${{money.amount}}</p>{{/money.fixed}}
 				{{#money.increasing}}<p>턴 순서에 따라 $60, $70, $80, $90 (2♟: $60, $80)</p>{{/money.increasing}}
-				{{#money.shares}}<p>Each ♟: ($600 / # of players)</p>{{/money.shares}}
-				{{#3.III}}<p>Each player gets an additional $20</p>{{/3.III}}
+				{{#money.shares}}<p>각플레이어 ♟: ($600 / 플레이어 수)</p>{{/money.shares}}
+				{{#3.III}}<p>픞레이어 마다 추가금 $20</p>{{/3.III}}
 			</div>
 		</div>
 	</div>
@@ -307,11 +307,11 @@
 				{{#priv.I.exists}}
 				<h3>Step I</h3>
 				<div class="row privileges">
-					{{#priv.I.1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-1.png" /></div><div class="col-xs-8"><strong>I (1)</strong> The player may place 1 additional new resident on each tile, but cannot exceed the limits of those tiles (on his capital he can have at max 1 headquarters and 9 residents, on all other tiles at max 1 settlement and 7 residents).</div></div></div>{{/priv.I.1}}
-					{{#priv.I.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-2.png" /></div><div class="col-xs-8"><strong>I (2)</strong> The player gets a one-time only additional income of $15 for placing a settlement on a city. (Phase 3 H: Income)</div></div></div>{{/priv.I.2}}
-					{{#priv.I.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-3.png" /></div><div class="col-xs-8"><strong>I (3)</strong> When all shares of that stock company are owned by players, the share value of that stock company is raised by $20 (instead of $10). (Share Round (SR))</div></div></div>{{/priv.I.3}}
-					{{#priv.I.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-4.png" /></div><div class="col-xs-8"><strong>I (4)</strong> The player has a better protection while defending and subtracts 1 hit of the attacker. He only rolls dice for each remaining hit of the attacker. (Phase 3 G: Fight{{#2}}, Phase 3 D: Residents{{/2}})</div></div></div>{{/priv.I.4}}
-					{{#priv.I.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-5.png" /></div><div class="col-xs-8"><strong>I (5)</strong> The player gets an additional income of $10. (Phase 3 H: Income)</div></div></div>{{/priv.I.5}}
+					{{#priv.I.1}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-1.png" /></div><div class="col-xs-8"><strong>I (1)</strong> 플레이어는 주민을 사서 놓을 때, 자기가 주민을 놓을 수 있는 타일 마다 자기 주민 1 개씩 더 놓을 수 있습니다. 단，타일의 주민 수 제 한을 넘길 수는 없습니다.(본부에는 주민 9개까지, 정착지에는 주 민 7개까지)(3C 단계: 구매).</div></div></div>{{/priv.I.1}}
+					{{#priv.I.2}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-2.png" /></div><div class="col-xs-8"><strong>I (2)</strong> 플레이어는 도시에 정착지를 놓을 때마다, 일회성 추가 수입 $15 을 받습니다.(3H 단계 : 수입)</div></div></div>{{/priv.I.2}}
+					{{#priv.I.3}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-3.png" /></div><div class="col-xs-8"><strong>I (3)</strong> 주식회사의 주식 증권 100%를 플레이어들이 가지고 있을 때, 주식 회사의 주가를 (W10이 아닌) W20 올립니다.(주식 라운드(SR))</div></div></div>{{/priv.I.3}}
+					{{#priv.I.4}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-4.png" /></div><div class="col-xs-8"><strong>I (4)</strong> 플레이어는 방어할 때 보호받으며 공격자의 명중에 1을 합니다. 이 플레이어는 그렇게 해서 남은 명중에 대해서만 주사위를 굴립니다. (3G 단계: 전투{{#2}} 포함하면 3D 단계: 주민{{/2}})</div></div></div>{{/priv.I.4}}
+					{{#priv.I.5}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-5.png" /></div><div class="col-xs-8"><strong>I (5)</strong> 배송한 상품에서 수입을 얻을 때，플레이어는 배송한 상품마다 수입 $10씩을 얻습니다. (3H 단계: 수입)</div></div></div>{{/priv.I.5}}
 					{{#priv.I.6}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-6.png" /></div><div class="col-xs-8"><strong>I (6)</strong> When selling goods, the player gets an additional income of $10 for each sold good. (Phase 3 H: Income)</div></div></div>{{/priv.I.6}}
 					{{#priv.I.7}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-7.png" /></div><div class="col-xs-8"><strong>I (7)</strong> The stock company must pay at max maintenance costs of $20. All additional costs are compensated. (Phase 4: Dividends)</div></div></div>{{/priv.I.7}}
 					{{#priv.I.8}}<div class="col-md-4 col-xs-12 col-sm-6"><div class="row"><div class="col-xs-4"><img src="img/privileges/card-l1-8.png" /></div><div class="col-xs-8"><strong>I (8)</strong> The player pays $15 less for each upgrade of his transport trolley, both for the bigger cargo hold and for more movement points. (Phase 3 C: Purchase)</div></div></div>{{/priv.I.8}}
