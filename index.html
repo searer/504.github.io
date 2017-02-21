@@ -117,6 +117,10 @@
 					<h2>라운드 갱신형 차례진행</h2>
 					<p>(수입이 많은이에서 적은이 순)</p>
 				{{/order.income}}
+				{{#order.income_reverse}}
+					<h2>라운드 갱신형 차례진행</h2>
+					<p>(수입이 낮은 회사에서 높은 회사 순)</p>
+				{{/order.income_reverse}}
 				{{#order.vp}}
 					<h2>라운드 갱신형 차례 진행</h2>
 					<p>(승점이 낮은 이에서 높은 이 순)</p>
@@ -269,6 +273,7 @@
 						라운드 플레이어 순서는 1단계와 같습니다.<br/>
 						{{^9.II}}수도는 첫 라운드의 1단계에 놓습니다.{{/9.II}}{{#9.II}}수도는 주식회사가 설립될 때 놓습니다.{{/9.II}}
 						{{#order.income}}플레이어 수에 따라 일치하는 플레이어 차례 순서 카드와 각 플레이어의 주민을 지도 옆에 놓습니다.{{/order.income}}
+						{{#order.income_reverse}}플레이어 수에 따라 일치하는 플레이어 차례 순서 카드와 각 플레이어의 주민을 지도 옆에 놓습니다.{{/order.income_reverse}}
 						{{#order.vp}}
 							{{^9.II}}
 								<p>2♟, 3♟, 4♟: 플레이어 수에 따라 해당하는 시작 카드와 점수 카드를 사용합니다. 시작 카드 2장을 지도 옆에 놓습니다. 그런 다음 해당하는 점수 카드를 뒷면에 따라 I, II, III 세 더미로 나눠서 섞고, 시작 카드 옆에서부터 뒷면으로 3열로 놓습니다.</p>
@@ -836,8 +841,10 @@
 		{{/7.I}}
 		{{#9.III}}{{^3}}{{^7.I}}
 			<p>
-				At the start of the game the turn order is randomly determined. {{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}All capitals are placed in the central city.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}Players choose capitals in reverse turn order.{{/mapnum.5}}{{/mapnum.4}} 
-				Starting with the 2nd round determine the player order according to the income of the former round, from low to high. In case of a tie simply reverse the player order of the concerned players.
+				게임이 시작될 때 차례 순서는 무작위로 결정됩니다.<br/>
+				{{^mapnum.1}}{{^mapnum.2}}{{^mapnum.3}}모든 수도는 중심 도시에 놓습니다.{{/mapnum.3}}{{/mapnum.2}}{{/mapnum.1}}{{^mapnum.4}}{{^mapnum.5}}플레이어는 차례 역순으로 수도를 선택합니다.{{/mapnum.5}}{{/mapnum.4}}<br/>
+				두 번째 라운드가 시작될 때 이전 라운드의 소득에 따라 낮은 순서에서 높은 순서로 차례 순서를 결정합니다.<br/>
+				수입이 같으면 해당하는 주식회사들은 이전 라운드에서의 차례 순서 역순입니다.
 			</p>
 		{{/7.I}}{{/3}}{{/9.III}}
 		{{#company}}{{^3.I}}{{^7.I}}
@@ -899,10 +906,19 @@
 
 	{{#9.III}}
 		<div class="row section">
-			<div class="col-md-2 col-xs-2 mod9"><h1>Phase 3 B: Stock Dealing</h1></div>
+			<div class="col-md-2 col-xs-2 mod9"><h1>3B 단계: 주식 거래</h1></div>
 			<div class="col-md-10 col-xs-10">
-				<p>The player may buy any number of shares of the other players from the bank for the actual share value, if these were already sold in a former round to the bank (if their dark side is face up). The player cannot sell these shares again!</p>
-				<p>Additionally, the player may sell exactly 1 of his shares to the bank during his turn. He places the share for now with the light side face up into the bank and gets money according to the actual share value (this money is not considered as income!). Then, the share value drops by $10. The player cannot sell his president&rsquo;s share! The player may conduct this <b>sale during his complete turn</b> to get missing money for one of his actions!</p>
+				<p>
+					이전 라운드에 은행에 팔린 다른 플레이어의 주식 증권(어두운 면으로 놓인)이 있다면, 은행에서 그 주식 증권을 주가 판에 표시된 현재 주가에 원하는 수만큼 살 수 있습니다.<br/>
+					이렇게 산 주식 증권은 결코 은행에 다시 팔 수 없습니다.
+				</p>
+				<p>
+					그리고, 플레이어는 자기 차례에 자기 주식회사의 주식 증권 1주를 팔 수 있습니다.<br/>
+					이 플레이어는 은행에 이 주식 증권을 밝은 면으로 놓고, 주가 판에 표시된 현재 주가에 따라 돈을 받습니다. (이는 수입으로 간주하지 않습니다.)<br/>
+					그런 다음, 그 주식회사의 주가가 $10 내려갑니다.<br/>
+					플레이어는 자기 사장 증권을 팔 수 없습니다.<br/>
+					플레이어는 자기 차례에 행동에 쓸 돈이 모자라면, <b>차례 중 아무때나 자기 주식회사의 주식 증권을 팔 수 있습니다.</b>
+				</p>
 			</div>
 		</div>
 	{{/9.III}}
@@ -1330,7 +1346,12 @@
 			{{/8.I}}
 			<p>Place the income of the stock company separate from the company assets to the side for now.</p>
 		{{/9.II}}
-		{{#9.III}}<p>The players place their income for now separately from their cash. After all players got their income, the players with the highest income raise their share values by $20. All other players raise their share values by $10. Finally flip all shares sold to the bank during this round, so their dark sides are face up again.</p>{{/9.III}}
+		{{#9.III}}<p>
+			플레이어는 자기가 얻은 수입을 자기 돈과 구별해서 따로 놓습니다.<br/>
+			모든 플레이어가 자기 수입을 받은 다음, 가장 많은 수입을 얻은 플레이어는 자기 주식회사의 주가를 $20 올립니다.<br/>
+			다른 플레이어는 자기 주식회사의 주가를 $10씩 올립니다.<br/>
+			마지막으로 이번 라운드 중에 은행에 팔린 주식 증권을 어두운 면으로 뒤집습니다.
+		</p>{{/9.III}}
 
 		{{^company}}{{#3.I}}
 			<p>플레이어는 다음 라운드의 <b>1 단계</b>에서 세금을 내기 전까지 이번 라운드에 얻은 수입을 따로 분리해 둡니다.</p>
@@ -1959,7 +1980,7 @@
 				'residents': false,
 				'map': {'priority': 1, 'func': explorer_map},
 				'order': {'priority': 4, 'clockwise': true},
-				'money': {'priority': 4, 'increasing': true},
+				'money': {'priority': 3, 'increasing': true},
 				'parts': {'24': 6, '21': 1},
 			},
 		},
@@ -2059,7 +2080,7 @@
 			'III': {
 				'residents': false,
 				'map': {'priority': 9, 'value': 0},
-				'order': {'priority': 3, 'income': true},
+				'order': {'priority': 3, 'income_reverse': true},
 				'money': {'priority': 9},
 				'parts': {'15s': 1, '31': 5, '32': 45, '20': 3},
 			},
